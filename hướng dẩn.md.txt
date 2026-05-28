@@ -1,0 +1,469 @@
+Bạn là senior frontend engineer, product designer và desktop-app architect.
+
+Hãy build một ứng dụng local tên là “PhuDong Web Brief Builder”.
+
+Mục tiêu:
+Ứng dụng dùng để nhập toàn bộ thông tin trước khi build website hoặc landing page. Sau khi người dùng nhập brief, ứng dụng tự động tạo ra một Master Prompt hoàn chỉnh để đưa vào Codex, Cursor, Claude, Gemini, ChatGPT hoặc AI builder khác nhằm build website deploy-ready.
+
+Yêu cầu quan trọng:
+Ứng dụng phải chạy local trước, nhưng kiến trúc code phải sẵn sàng nâng cấp thành desktop app bằng Tauri hoặc Electron. Không được viết code phụ thuộc cứng vào localStorage trong component. Phải có storage adapter riêng để sau này thay bằng file system storage của desktop app.
+
+Công nghệ:
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Không backend
+- Không database
+- Lưu dữ liệu MVP bằng localStorage
+- Export TXT, Markdown, JSON
+- Import JSON
+- Có thể chạy bằng:
+  npm install
+  npm run dev
+  npm run build
+
+Theme UI:
+- Màu xám đen và đỏ
+- Hiện đại
+- Sạch
+- Chuyên nghiệp
+- Dễ dùng
+- Phù hợp công cụ productivity cho designer/developer/agency
+
+Layout:
+Ứng dụng có layout 3 cột.
+
+Cột trái:
+- Logo/tên app
+- Danh sách nhóm câu hỏi
+- Trạng thái hoàn thành từng nhóm
+- Build Readiness Score từ 0 đến 100%
+- Danh sách mục bắt buộc còn thiếu
+- Nút New Brief
+- Nút Save Draft
+- Nút Reset Brief
+
+Cột giữa:
+- Form nhập brief theo nhóm
+- Người dùng chọn nhóm ở sidebar thì form tương ứng hiển thị
+- Dùng input, textarea, checkbox, select, tag input, dynamic list
+- Form phải dễ nhập, rõ label, có placeholder hữu ích
+
+Cột phải:
+- Preview Master Prompt realtime
+- Nút Copy Prompt
+- Nút Copy JSON
+- Nút Export TXT
+- Nút Export Markdown
+- Nút Export JSON
+- Nút Import JSON
+
+Nhóm câu hỏi cần có:
+1. Thông tin dự án
+2. Mục tiêu kinh doanh
+3. Đối tượng người dùng
+4. Cấu trúc website / landing page
+5. Nội dung chính
+6. Phong cách thiết kế
+7. Chức năng bắt buộc
+8. Tích hợp bên thứ ba
+9. SEO
+10. Performance
+11. Bảo mật
+12. Responsive
+13. CMS / quản trị nội dung
+14. Technical stack
+15. Tracking / Analytics
+16. QA Checklist
+17. Deploy Production
+18. Bàn giao
+
+Schema dữ liệu:
+Tạo file src/types/brief.ts với interface rõ ràng.
+
+Dữ liệu cần có:
+
+meta:
+- schemaVersion
+- updatedAt
+
+projectInfo:
+- projectName
+- websiteType
+- mainGoal
+- targetUsers
+- language
+- deadline
+- domain
+- hosting
+
+conversion:
+- primaryCTA
+- secondaryCTA
+- leadFields
+- leadDestination
+- trackingEvents
+
+audience:
+- primaryAudience
+- painPoints
+- userNeeds
+- decisionFactors
+- devices
+
+structure:
+- pages
+- headerMenu
+- footerContent
+- landingSections
+
+content:
+- headline
+- subheadline
+- brandMessage
+- heroDescription
+- serviceDescription
+- benefits
+- testimonials
+- faq
+- images
+- videos
+- documents
+
+design:
+- style
+- colors
+- typography
+- referenceSites
+- animationLevel
+- darkMode
+- layoutMood
+
+features:
+- contactForm
+- booking
+- payment
+- blog
+- cms
+- search
+- filter
+- chat
+- multiLanguage
+- userAuth
+- adminDashboard
+- fileUpload
+
+integrations:
+- ga4
+- gtm
+- metaPixel
+- googleAds
+- crm
+- googleSheet
+- emailNotification
+- paymentGateway
+- map
+- chatTool
+- bookingTool
+
+seo:
+- keywords
+- metaTitle
+- metaDescription
+- schema
+- sitemap
+- robots
+- canonical
+- openGraph
+- altText
+
+performance:
+- lighthouseTarget
+- imageOptimization
+- lazyLoading
+- fontOptimization
+- cdn
+- cache
+- coreWebVitals
+
+security:
+- https
+- formValidation
+- spamProtection
+- rateLimit
+- secureHeaders
+- envVariables
+- errorHandling
+- backup
+
+responsive:
+- mobileFirst
+- breakpoints
+- browsers
+- stickyMobileCTA
+- tabletLayout
+
+cms:
+- enabled
+- editableSections
+- adminRoles
+- cmsType
+- guideRequired
+
+technical:
+- frontend
+- backend
+- database
+- cms
+- hosting
+- deployment
+- github
+- ciCd
+- docker
+- envFile
+
+tracking:
+- analyticsTool
+- conversionEvents
+- utmTracking
+- reportFrequency
+- leadStorage
+- notificationChannel
+
+qa:
+- contentCheck
+- functionalityCheck
+- responsiveCheck
+- seoCheck
+- performanceCheck
+- browserCheck
+
+deploymentChecklist:
+- productionBuild
+- domainSetup
+- ssl
+- redirects
+- sitemapSubmit
+- analyticsConnected
+- formTested
+- backupCreated
+
+handover:
+- sourceCode
+- adminAccount
+- cmsGuide
+- deploymentGuide
+- maintenancePlan
+
+Build Readiness Score:
+Tính điểm từ 0 đến 100 dựa trên các mục bắt buộc.
+
+Trọng số:
+- Thông tin dự án: 15 điểm
+- Đối tượng người dùng: 10 điểm
+- Conversion: 15 điểm
+- Cấu trúc trang: 15 điểm
+- Nội dung: 15 điểm
+- Design: 10 điểm
+- Chức năng: 10 điểm
+- SEO: 5 điểm
+- Technical / Deploy: 5 điểm
+
+Các field bắt buộc:
+- projectInfo.projectName
+- projectInfo.websiteType
+- projectInfo.mainGoal
+- projectInfo.targetUsers
+- conversion.primaryCTA
+- structure.pages hoặc structure.landingSections
+- content.headline
+- content.subheadline
+- design.style
+- design.colors
+- technical.frontend
+- technical.deployment
+
+Nếu score dưới 40:
+Hiển thị: “Brief thiếu nhiều thông tin, chưa nên build.”
+
+Nếu score từ 40 đến 69:
+Hiển thị: “Có thể build demo, nhưng chưa nên deploy.”
+
+Nếu score từ 70 đến 89:
+Hiển thị: “Có thể build bản gần production.”
+
+Nếu score từ 90 đến 100:
+Hiển thị: “Brief đã đủ điều kiện để build website deploy-ready.”
+
+Storage:
+Tạo file src/lib/storage.ts.
+Không gọi localStorage trực tiếp trong component.
+Cần có các hàm:
+- loadBrief()
+- saveBrief(brief)
+- clearBrief()
+- getStorageInfo()
+- migrateBriefIfNeeded(brief)
+
+Export:
+Tạo file src/lib/exporters.ts.
+Cần có các hàm:
+- exportPromptAsTxt(prompt, filename)
+- exportPromptAsMarkdown(prompt, filename)
+- exportBriefAsJson(brief, filename)
+- copyToClipboard(text)
+
+Import:
+Tạo file src/lib/importers.ts.
+Cần có:
+- importBriefFromJson(file)
+- validateImportedBrief(data)
+- normalizeImportedBrief(data)
+
+Prompt Generator:
+Tạo file src/lib/promptGenerator.ts.
+Hàm chính:
+- generateMasterPrompt(brief)
+
+Master Prompt output cần có cấu trúc:
+
+# MASTER BUILD PROMPT
+
+## 1. Vai trò AI
+Bạn là senior product designer, UX strategist, full-stack developer, SEO specialist và deployment engineer.
+
+## 2. Nhiệm vụ
+Build website / landing page deploy-ready dựa trên brief này.
+
+## 3. Thông tin dự án
+Tự động chèn dữ liệu projectInfo.
+
+## 4. Mục tiêu chuyển đổi
+Tự động chèn dữ liệu conversion.
+
+## 5. Đối tượng người dùng
+Tự động chèn dữ liệu audience.
+
+## 6. Cấu trúc website
+Tự động chèn pages, header menu, footer, landing sections.
+
+## 7. Nội dung từng section
+Tự động chèn headline, subheadline, brand message, benefits, FAQ, testimonial.
+
+## 8. UI/UX Design
+Tự động chèn style, màu sắc, typography, animation, reference.
+
+## 9. Chức năng bắt buộc
+Tự động chèn features.
+
+## 10. Tích hợp
+Tự động chèn integrations.
+
+## 11. SEO
+Tự động chèn keywords, meta title, meta description, schema, sitemap, robots, Open Graph.
+
+## 12. Performance
+Tự động chèn performance requirements.
+
+## 13. Security
+Tự động chèn security requirements.
+
+## 14. Responsive
+Tự động chèn responsive requirements.
+
+## 15. Technical Stack
+Tự động chèn frontend, backend, database, CMS, deployment.
+
+## 16. Tracking / Analytics
+Tự động chèn tracking requirements.
+
+## 17. QA Checklist
+Tạo checklist kiểm tra trước deploy.
+
+## 18. Deployment Checklist
+Tạo checklist deploy production.
+
+## 19. Output yêu cầu
+AI phải tạo:
+- Source code hoàn chỉnh
+- Cấu trúc thư mục rõ ràng
+- Component tách riêng
+- README hướng dẫn chạy local
+- README hướng dẫn deploy
+- File cấu hình môi trường mẫu nếu cần
+- Checklist test
+- Không để lỗi console nghiêm trọng
+- Không hard-code API key
+- Responsive hoàn chỉnh
+- SEO-ready
+- Deploy-ready
+
+Component bắt buộc:
+- App
+- Sidebar
+- ReadinessScore
+- MissingFields
+- FormPanel
+- PromptPreview
+- ExportActions
+- TextField
+- TextAreaField
+- CheckboxField
+- SelectField
+- TagInput
+- DynamicList
+- Toast
+- ConfirmDialog
+- EmptyState
+
+Hooks bắt buộc:
+- useBrief
+- useAutosave
+- useReadinessScore
+- usePrompt
+- useToast
+
+Responsive:
+- Desktop: layout 3 cột
+- Laptop: 3 cột, preview có thể thu gọn
+- Tablet: sidebar chuyển thành top tabs
+- Mobile: layout xếp dọc, không vỡ giao diện
+
+Desktop-ready requirement:
+Tạo file DESKTOP_UPGRADE.md giải thích cách nâng cấp:
+1. Giữ nguyên React/Vite frontend.
+2. Bọc app bằng Tauri hoặc Electron.
+3. Thay storage adapter từ localStorage sang file system storage.
+4. Thêm native menu: New, Open, Save, Save As, Export.
+5. Thêm multi-project workspace.
+6. Thêm auto-update nếu cần.
+7. Không rewrite toàn bộ UI.
+
+Yêu cầu code:
+- TypeScript type rõ ràng
+- Code sạch, dễ bảo trì
+- Component nhỏ, dễ sửa
+- Không lặp code
+- Không dùng thư viện nặng không cần thiết
+- Không hard-code secret
+- Có xử lý lỗi import JSON
+- Có confirm khi reset
+- Có thông báo khi copy/export/import thành công
+- Có empty state
+- Có README đầy đủ
+- Không có lỗi console nghiêm trọng
+
+README cần có:
+1. Giới thiệu ứng dụng
+2. Tính năng chính
+3. Cài đặt
+4. Chạy local
+5. Build production
+6. Cấu trúc thư mục
+7. Cách dùng app
+8. Cách export/import brief
+9. Cách nâng cấp desktop
+10. Roadmap phát triển
+
+Hãy tạo toàn bộ source code hoàn chỉnh cho ứng dụng này.
