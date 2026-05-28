@@ -38,9 +38,16 @@ Menu de xuat:
 - Export JSON
 - Import JSON
 
+Web MVP da co workspace project va file project `.phudong-brief.json` thong qua browser file picker/download. Khi nang cap desktop, thay `WorkspaceManager` actions bang native file dialog:
+
+- Open File: doc file `.phudong-brief.json` tu file system.
+- Save: ghi de file project dang active neu co file path.
+- Save As: chon duong dan moi va ghi file.
+- Export: xuat prompt/JSON/ZIP den duong dan nguoi dung chon.
+
 ## 5. Them multi-project workspace
 
-Desktop version co the luu moi brief thanh mot file `.phudong-brief.json` trong workspace. Sau do them recent files va project switcher.
+Desktop version co the luu moi brief thanh mot file `.phudong-brief.json` trong workspace. App hien da co project switcher local; desktop nen bo sung file path, recent files va workspace folder mac dinh.
 
 ## 6. Them auto-update
 

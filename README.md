@@ -6,6 +6,7 @@ PhuDong Web Brief Builder la ung dung local de thu thap brief truoc khi build we
 
 - Form brief theo 18 nhom cau hoi.
 - App build brief cho web app, mobile app, desktop app, internal tool va dashboard.
+- Quick options cho App build brief: app type, platforms, roles, workflows, screens, data entities, permissions, API, state, notifications, billing, admin needs, error/empty states.
 - Prompt build ung dung co platforms, user roles, workflows, screens, data entities, auth, permissions, API, state management, notifications va release requirements.
 - Tuy chon bang mau chu dao va mo ta mau giao dien de dua vao Master Prompt.
 - Build Readiness Score 0-100%.
@@ -16,6 +17,7 @@ PhuDong Web Brief Builder la ung dung local de thu thap brief truoc khi build we
 - Language toggle cho prompt: Vietnamese / English.
 - Preview tabs: Prompt, JSON, Checklist.
 - Saved drafts nhieu brief trong local storage.
+- Workspace projects: Save, Save As, Open File, Export `.phudong-brief.json`.
 - Quality warnings cho brief yeu hoac chua san sang release.
 - Copy Prompt, Copy JSON.
 - Export TXT, Markdown, JSON.
@@ -36,6 +38,8 @@ npm install
 ```bash
 npm run dev
 ```
+
+Neu dung Windows CMD/PowerShell, xem them `RUN_LOCAL_WINDOWS.md`.
 
 ## Build production
 
@@ -103,6 +107,14 @@ src/
 - Bam Save de luu draft hien tai.
 - Danh sach Saved drafts cho phep mo lai hoac xoa draft.
 - Draft duoc luu local bang storage adapter, khong can backend/database.
+
+## Workspace va file project
+
+- `Workspace > Save`: luu brief hien tai thanh project trong workspace.
+- `Workspace > Save As`: tao ban sao project moi.
+- `Workspace > Open File`: mo file `.phudong-brief.json` hoac JSON brief tu may.
+- `Workspace > Export`: tai file `.phudong-brief.json` de luu/ban giao.
+- Tren web MVP, Open/Export dung browser file picker/download. Khi nang cap desktop, cac thao tac nay co the thay bang native file dialog cua Tauri/Electron.
 
 ## Nang cap desktop
 
