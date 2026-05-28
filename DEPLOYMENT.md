@@ -41,3 +41,23 @@ npm run dev
 - Confirm `node_modules/` and `dist/` are ignored.
 - Export a ZIP package from the app for handover when needed.
 - Test prompt modes and language output before sharing publicly.
+
+## Troubleshooting
+
+### Vercel: TS18003 no inputs were found
+
+This usually means Vercel is building a GitHub commit that does not contain the `src/` folder, or the Vercel project root is set to the wrong directory.
+
+Check:
+
+```bash
+git status --short
+git commit -m "Initial PhuDong Web Brief Builder app"
+git push -u origin main
+```
+
+In Vercel Project Settings:
+
+- Root Directory: leave empty if the app is at the repository root.
+- Build Command: `npm run build`
+- Output Directory: `dist`
